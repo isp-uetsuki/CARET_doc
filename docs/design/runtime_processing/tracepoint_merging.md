@@ -59,4 +59,4 @@ We merge these events to a single `merged_publish_timing` event.
 ## Another combination of events
 Another combination of events are not always consecutive. Therefore, they cannot be merged.
 
-For instance, `callback_start` sometimes followed by single `rclcpp_publish`, but not always: `callback_start` can be followed by multipe `rclcpp_publish`'s, also `callback_start` can be followed by no `rclcpp_publish`. It means we cannot merge these events because we cannot create fixed-size merged tracepoint for these events.
+For instance, `rclcpp_publish` sometimes followed by single `callback_start`, but not always: `rclcpp_publish` can be followed by multipe `callback_start`'s, also `rclcpp_publish` can be followed by no `callback_start`. It means we cannot merge these events because we cannot define fixed-size merged tracepoint for these events.
